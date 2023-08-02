@@ -2,6 +2,8 @@ USEFUL LINKS:
 
 https://www.youtube.com/watch?v=HY7tD9IPfac
 
+https://www.youtube.com/watch?v=sogS0DtejVA
+
 https://learn.microsoft.com/en-us/aspnet/core/security/authentication/customize-identity-model?view=aspnetcore-7.0
 
 https://learn.microsoft.com/en-us/aspnet/core/security/authentication/customize-identity-model?view=aspnetcore-7.0
