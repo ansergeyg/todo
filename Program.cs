@@ -1,4 +1,5 @@
 // First, we added this comment for testing merging squash PR that we will do right after this change is merged.
+// Some change to create a commit for rebasing.
 
 var builder = WebApplication.CreateBuilder(args);
 
