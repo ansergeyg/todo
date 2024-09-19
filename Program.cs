@@ -1,3 +1,5 @@
+// First, we added this comment for testing merging squash PR that we will do right after this change is merged.
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
