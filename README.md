@@ -1,4 +1,4 @@
-Fast-forward pros and cons:
+### Fast-forward pros and cons:
 
 Fast-forward merges occur when there is a linear path from the base branch to the target branch, allowing the head of the base branch to be simply moved forward to point to the target branch. The target branch's pointer is moved forward to the head of the source branch if no divergent work has been done on the target branch. This effectively brings the history of the target branch in line with the source branch.
 
@@ -54,3 +54,24 @@ The decision between using fast-forward and non-fast-forward merges largely depe
 Conversely, for smaller projects or those with a more streamlined development process, fast-forward merges might be preferred for their simplicity and cleaner history. In any case, it's important to choose a strategy that aligns with the team's workflow and project requirements.
 
 Taken from: https://graphite.dev/guides/git-fast-forward-merge
+
+
+### Common scenario when fast-forward is impossible:
+
+When you are ahead as well as behind of MAIN:
+```
+            *E-*F-*G-*H-*I    BRANCH
+           /
+*A-*B-*C-*D-*J-*K             MAIN
+```
+Then you can't fast-forward merge E..I into main, since J..K are in the way. So fast-forward isn't possible in this case.
+
+But you can rebase E..I onto K:
+
+```
+*A-*B-*C-*D-*J-*K-*E'-*F'-*G'-*H'-*I'             MAIN | BRANCH
+```
+
+But what happens is that a new commit is made containing the changes of E and appended to main, then a new commit is made with the changes of F and appended to main... etc etc until all commits from the branch have been "moved"/"replayed" on the other branch. The result is again a single line of history with no branches and merges.
+
+Because the commits had to be re-applied and conflicts potentially resolved, the actual commits will change, a new commit-id generated etc
